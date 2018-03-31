@@ -53,8 +53,8 @@ header{
     width: 100%;    
     padding: 20px;
 }
-a:hover{
-	text-decoration: none;
+a:hover,a:focus,a:active{
+	text-decoration: none !important;
 }
 .site-logo{
 	float: left;
@@ -190,7 +190,7 @@ header:not(.with_hover_bg_color) nav.main-navigation>ul>li:hover>a {
 }
 .home_special_list li:after {
     content: "";
-    background: url(http://www.brwcinfotech.com/creditcareonline/wp-content/uploads/2018/02/checked.png);
+    background: url(../images/checked.png);
     width: 24px;
     height: 24px;
     position: absolute;
@@ -234,11 +234,11 @@ header:not(.with_hover_bg_color) nav.main-navigation>ul>li:hover>a {
 .contact-us-container .form-group{
 	margin-bottom: 20px;
 }
-    .contact-us-container{
+.contact-us-container{
     	background: #faf8f4;
     	padding: 30px;
-    }
-.contact-us-form{
+ }
+ .contact-us-form{
 	background: #fff;
 	padding: 30px 60px;
 	border-top: solid 4px #AFD037;
@@ -253,9 +253,10 @@ input[type="password"], input[type="search"], input[type="tel"], input[type="num
 	background: #fff;
 	border-color: #b4a698;
 	font-size: 14px !important;
+	height: 45px;
 }
 .contact-us-container input{
-	height: 45px;
+	
 	font-size: 14px !important;
 }
 .contact-us-form{
@@ -280,8 +281,10 @@ input[type="password"], input[type="search"], input[type="tel"], input[type="num
     height: 40px;
     line-height: 40px;
 }
-.contact-us-container .wpcf7-submit:hover{
+.contact-us-container .wpcf7-submit:hover,.contact-us-container .wpcf7-submit:focus,
+.contact-us-container .wpcf7-submit:active{
 	background-color: #a4c433;
+	outline: none;
 }
 .site-footer{
 	padding: 0;
@@ -326,15 +329,176 @@ footer .widget-title{
 }
 .sticky-logo,.header.sticky .logo{
 	display: none;
+	height: 40px;
+	margin-top: 10px;
 }
 header.sticky .sticky-logo{
 	display: block;
 }
 header.sticky{
 	position: fixed;
-	padding: 10px;
+	padding: 0px;
 	background: #fff;
 }
 header.sticky #menu-header-menu li a{
 	color: #303030;
+}
+.header-wrap{
+	height: 600px;
+	background-attachment: fixed;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center 0px;
+}
+.inner-banner{
+	display: table;
+	height: 100%;
+	text-align: center;
+	width: 100%;
+}
+.inner-entry-header{
+	display: table-cell;
+    vertical-align: middle;
+    width: 100%;
+    text-align: center;
+}
+.inner-entry-title{
+    font-size: 60px !important;
+    font-weight: 700;
+    color: #fff;
+    text-transform: uppercase;
+    position: relative;
+}
+.inner-entry-title span{
+	padding-bottom: 20px;
+}
+.inner-entry-header .center-line{
+	position: relative;
+	background: #fff;
+	height: 1px;
+	width: 100px;
+	text-align: center;
+	display: block;
+	margin: 0 auto;
+}
+.inner-page-content{
+	padding: 40px 50px;
+	
+}
+.home_slider,.inner-page-content,.home_section{
+	background: #faf8f4;
+}
+.inner-page-content h2,.home_section.inner-page-content h2{
+	color: #303030;
+	background: #B0CE45;
+	padding: 5px 10px;
+	border-radius: 10px;
+	font-weight: 500;
+	font-size: 47px;
+	text-align: center;
+	margin-bottom: 20px;
+}
+.inner-page-content li{
+	font-size: 18px;
+	font-family: "Lato",sans-serif;
+	margin: 0 0 22px;
+    padding: 0 0 0 35px;
+    color: #303030;
+    position: relative;
+    list-style: none;
+}
+.inner-page-content li:before{
+    position: absolute;
+    left: 0;
+    width: 7px;
+    height: 7px;
+    top: 9px;
+    background-color: #ababab;
+    display: block;
+    content: '';
+    border-radius: 25px;
+}
+.map iframe{
+	margin-bottom: 0px;
+}
+.inner-page-content .more-info-text a,.inner-page-content .more-info-text a:hover,
+.inner-page-content .more-info-text a:active,.inner-page-content .more-info-text a:focus{
+	color:#303030;
+	text-decoration: none;
+	box-shadow: none;
+}
+
+/* menu icon */
+.header .menu-icon{
+	display: none;
+}
+.header .menu-toggle {
+  display: none;
+}
+.header .menu-icon {
+  cursor: pointer;
+  float: right;
+  padding: 28px 20px;
+  position: relative;
+  user-select: none;
+}
+
+.header .menu-icon .navicon {
+  background: #fff;
+  display: block;
+  height: 2px;
+  position: relative;
+  transition: background .2s ease-out;
+  width: 22px;
+}
+
+.header .menu-icon .navicon:before,
+.header .menu-icon .navicon:after {
+  background: #fff;
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all .2s ease-out;
+  width: 100%;
+}
+
+.header .menu-icon .navicon:before {
+  top: 8px;
+}
+
+.header .menu-icon .navicon:after {
+  top: -8px;
+}
+
+/* menu btn */
+
+
+
+.header .menu-toggle:checked ~ .menu {
+  max-height: 240px;
+}
+
+.header .menu-toggle:checked ~ .menu-icon .navicon {
+  background: transparent;
+}
+
+.header .menu-toggle:checked ~ .menu-icon .navicon:before {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+.header .menu-toggle:checked ~ .menu-icon .navicon:after {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+
+.header .menu-toggle:checked ~ .menu-icon:not(.steps) .navicon:before,
+.header .menu-toggle:checked ~ .menu-icon:not(.steps) .navicon:after {
+  top: 0;
+}
+@media (max-width:767px){
+	.header .menu-icon{
+	  display: inline-block;
+	}
 }

@@ -17,10 +17,7 @@ jQuery(document).ready(function(){
 	autoplayHoverPause:false
 });
 	
-
-});
 jQuery(window).scroll(function() {
-	console.log("hey");
 	 headerFixed();
 	 function headerFixed(){
 	if (jQuery(window).width() > 767) {
@@ -37,8 +34,11 @@ jQuery(window).scroll(function() {
 		// jQuery('.site-content').removeClass("stickys");
 	 }
 	}
-	});
-	 jQuery(window).resize(function(){
+	jQuery(window).resize(function(){
 	 	 headerFixed();
 	 });
+	});
+	 
+});
+
 	
