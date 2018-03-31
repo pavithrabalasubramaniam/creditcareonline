@@ -28,9 +28,11 @@ body:after {
 .widget p, .widget address, .widget hr, .widget ul, .widget ol, .widget dl, .widget dd, .widget table{
 	margin-bottom: 10px;
 }
-*{
-	font-size: 17px;
+.entry-header, .entry-summary, .entry-content, .entry-footer, .page-content{
+	margin-right: 0px;
+	margin-left: 0px;
 }
+
 p{
 	color: #303030;
     font-family: 'Lato', sans-serif;
@@ -67,6 +69,10 @@ a:hover{
 .widget{
 	border-top: none;
 	padding-top: 0;
+	margin-bottom: 0;
+}
+.panel-grid{
+	margin-bottom: 0 !important;
 }
 .site-header-main{
 	padding: 0 55px 0 25px;
@@ -126,19 +132,30 @@ header:not(.with_hover_bg_color) nav.main-navigation>ul>li:hover>a {
 .home_section h2{
 	color: #303030;
 	background: #B0CE45;
-	padding: 10px;
+	padding: 5px 10px;
 	border-radius: 10px;
 	font-weight: 500;
 	font-size: 57px;
 	text-align: center;
 	margin-bottom: 20px;
 }
+.home_section_inner p{
+	font-size: 18px;
+}
+.home_slider_container .owl-theme .owl-nav.disabled+.owl-dots{
+	margin-top: 0 !important;
+}
 .home_slider_container{
 	background: url(../images/testimonials_inner.jpg) no-repeat;
 	background-size: cover;
 	background-attachment: fixed;
 }
-.n2-ss-slider-1:before{
+.home_slider_container .owl-theme .owl-dots .owl-dot span{
+	width: 9px;
+    height: 9px;
+    margin: 5px 4px;
+}
+.n2-ss-slide-backgrounds:before{
 	content: "";
 	position: absolute;
 	background: rgba(0,0,0,0.3);
@@ -146,20 +163,29 @@ header:not(.with_hover_bg_color) nav.main-navigation>ul>li:hover>a {
 	top: 0;
 	width: 100%;
     height: 100%;
-    z-index: 999;
+    z-index: 19;
+}
+.n2-ss-layer{
+	text-align: left;
+	margin: 0;
 }
 .home_section p{
 	padding-top: 10px;
 	font-family: 'Lato', sans-serif;
 }
+
+.home_section_inner{
+	padding: 50px 70px 30px;
+}
 .home_special_list{
 	position: relative;
+	margin: 0;
 }
 .home_special_list li{
 	list-style: none;
-    padding-left: 30px;
+    padding-left: 35px;
     padding-top: 11px;
-    font-size: 21px;
+    font-size: 21px !important;
     line-height: 21px;
 }
 .home_special_list li:after {
@@ -196,14 +222,17 @@ header:not(.with_hover_bg_color) nav.main-navigation>ul>li:hover>a {
 .home_slider_container .slider_image{
 	padding-bottom: 10px;
 }
-
+.home_slider_container .author{
+	margin-top: 21px;
+    font-size: 13px;
+}    
 .contact-us-container label {
     display: block !important;
-    margin-bottom: 0px;
+    margin-bottom: 10px;
     font-weight: normal;
 }
 .contact-us-container .form-group{
-	margin-bottom: 35px;
+	margin-bottom: 20px;
 }
     .contact-us-container{
     	background: #faf8f4;
@@ -216,12 +245,24 @@ header:not(.with_hover_bg_color) nav.main-navigation>ul>li:hover>a {
     margin-top: 20px;
     box-shadow: 0 7px 25px 1px rgba(0,0,0,0.08);
 }
+textarea.wpcf7-form-control.wpcf7-textarea {
+    height: 100px;
+}
 input[type="date"], input[type="time"], input[type="datetime-local"], input[type="week"], input[type="month"], input[type="text"], input[type="email"], input[type="url"],
 input[type="password"], input[type="search"], input[type="tel"], input[type="number"], textarea{
 	background: #fff;
+	border-color: #b4a698;
+	font-size: 14px !important;
 }
 .contact-us-container input{
 	height: 45px;
+	font-size: 14px !important;
+}
+.contact-us-form{
+	font-size: 17px;
+}
+.contact-us-form .attachment .column{
+	padding-left: 0;
 }
 .contact-us-container .wpcf7-submit{
 	background-color: #a4c433;
@@ -238,4 +279,62 @@ input[type="password"], input[type="search"], input[type="tel"], input[type="num
     text-transform: capitalize;
     height: 40px;
     line-height: 40px;
+}
+.contact-us-container .wpcf7-submit:hover{
+	background-color: #a4c433;
+}
+.site-footer{
+	padding: 0;
+}
+.footer-top-section{
+	padding: 30px;
+	    background-color: #242c42;
+}
+.footer-top-section,.footer-top-section p,.footer-top-section span, .footer-top-section li,
+.footer-top-section li a,.footer-top-section .textwidget{
+	color: #e8e8e8;
+	font-size: 17px;
+    line-height: 27px;
+}
+.footer-top-section li{
+	list-style: none;
+	padding-bottom: 7px;
+}
+footer .widget-title{
+	text-transform: capitalize !important;
+    font-size: 20px !important;
+    font-weight: 400;
+	color: #e8e8e8 !important;
+	font-family: "Lato", sans-serif;
+	letter-spacing: normal !important; 
+
+}
+.footer-bottom-section{
+	padding: 20px;
+	background: #faf8f4;
+		text-align: center;
+
+}
+.footer-bottom-section a{
+	text-decoration: none;
+	font-weight:700;
+	color: #361004;
+	box-shadow: none;
+}
+.footer-bottom-section a:hover{
+	text-decoration: none;
+}
+.sticky-logo,.header.sticky .logo{
+	display: none;
+}
+header.sticky .sticky-logo{
+	display: block;
+}
+header.sticky{
+	position: fixed;
+	padding: 10px;
+	background: #fff;
+}
+header.sticky #menu-header-menu li a{
+	color: #303030;
 }

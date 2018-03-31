@@ -33,7 +33,8 @@
 			<div class="site-header-main clearfix">
 				<div class="site-logo">				
 						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-						<img src="<?php echo esc_url(home_url('/')) ?>wp-content/uploads/2018/03/logo_normal.png">
+						<img class="logo" src="<?php echo esc_url(home_url('/')) ?>wp-content/uploads/2018/03/logo_normal.png">
+						<img class="sticky-logo" src="<?php echo esc_url(home_url('/')) ?>wp-content/uploads/2018/03/logo_new.png">
 						</a>				
 				</div><!-- .site-branding -->
 

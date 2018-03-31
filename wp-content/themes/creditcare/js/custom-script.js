@@ -15,5 +15,30 @@ jQuery(document).ready(function(){
     autoplay:true,
 	autoplayTimeout:5000,
 	autoplayHoverPause:false
-})
 });
+	
+
+});
+jQuery(window).scroll(function() {
+	console.log("hey");
+	 headerFixed();
+	 function headerFixed(){
+	if (jQuery(window).width() > 767) {
+		if (jQuery(this).scrollTop() > 200 ){ 
+			jQuery('header').addClass("sticky");
+			// jQuery('.site-content').addClass("stickys");
+		  } else {
+			jQuery('header').removeClass("sticky");
+			// jQuery('.site-content').removeClass("stickys");
+		  }	 
+	 }
+	 else{
+	 	jQuery('header').removeClass("sticky");
+		// jQuery('.site-content').removeClass("stickys");
+	 }
+	}
+	});
+	 jQuery(window).resize(function(){
+	 	 headerFixed();
+	 });
+	
