@@ -28,9 +28,9 @@
 	<div class="page-inner">
 		<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'twentysixteen' ); ?></a>
 
-		<header id="masthead" class="site-header" role="banner">
+		<header id="masthead" class="header" role="banner">
 		<div class="container">
-			<div class="site-header-main">
+			<div class="site-header-main clearfix">
 				<div class="site-logo">				
 						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
 						<img src="<?php echo esc_url(home_url('/')) ?>wp-content/uploads/2018/03/logo_normal.png">

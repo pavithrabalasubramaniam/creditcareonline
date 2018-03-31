@@ -49,6 +49,10 @@ header{
     background: transparent;
     color: #fff;
     width: 100%;    
+    padding: 20px;
+}
+a:hover{
+	text-decoration: none;
 }
 .site-logo{
 	float: left;
@@ -58,22 +62,66 @@ header{
 }
 .site-header-menu{
 	float: right;
+	margin: 0;
 }
 .widget{
 	border-top: none;
 	padding-top: 0;
 }
+.site-header-main{
+	padding: 0 55px 0 25px;
+}
 h2, .h2, h2 a {
     font-family: 'Raleway', sans-serif;
     font-weight: normal;
 }
-#menu-header-menu a{
+.main-navigation .primary-menu > li {
+    line-height: 40px;
+    padding: 0 17px;
+}
+#menu-header-menu li a{
 	color: #ffffff;
     font-family: 'Lato', sans-serif;
     font-size: 15px;
     font-style: normal;
     font-weight: 400;
     text-transform: capitalize;
+     position: relative;
+   letter-spacing: 1px;
+}
+#menu-header-menu{
+	margin:20px 0;
+}
+#menu-header-menu > li a{
+	padding: 0;
+}
+
+#menu-header-menu > li a:hover{
+	opacity: 0.8;
+}
+#menu-header-menu > li:hover a:after{
+	content: "";
+	background: #afd037;
+	width: 100%;
+	height: 2px;
+	position: absolute;
+	left: 0;
+	bottom: -5px;
+}
+#menu-header-menu li.current-menu-item a {
+    color: #afd037;
+}
+#menu-header-menu li:not(:first-child):before {
+    content: '|';
+    position: absolute;
+    color: #9b9b9b;
+    font-size: 15px;
+    font-weight: 400;
+    top: -10px;
+    left: 0;
+}
+header:not(.with_hover_bg_color) nav.main-navigation>ul>li:hover>a {
+    opacity: .8;
 }
 .home_section h2{
 	color: #303030;
@@ -89,6 +137,16 @@ h2, .h2, h2 a {
 	background: url(../images/testimonials_inner.jpg) no-repeat;
 	background-size: cover;
 	background-attachment: fixed;
+}
+.n2-ss-slider-1:before{
+	content: "";
+	position: absolute;
+	background: rgba(0,0,0,0.3);
+	left: 0;
+	top: 0;
+	width: 100%;
+    height: 100%;
+    z-index: 999;
 }
 .home_section p{
 	padding-top: 10px;
