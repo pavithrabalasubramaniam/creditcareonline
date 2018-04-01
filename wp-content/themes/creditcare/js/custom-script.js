@@ -16,6 +16,39 @@ jQuery(document).ready(function(){
 	autoplayTimeout:5000,
 	autoplayHoverPause:false
 });
+	if(jQuery(".contact-us-form").hasClass("contact-form")){
+		jQuery(".chat-icon").addClass("show-icon");
+		jQuery(".chat-icon").click(function(){
+			var headerHt=jQuery("header").innerHeight();
+			if(jQuery(window).width()<992){
+			jQuery("body,html").animate({
+				scrollTop:jQuery(".contact-us-container").offset().top
+			},"slow")
+		}
+		else{
+			jQuery("body,html").animate({
+				scrollTop:jQuery(".contact-us-container").offset().top-headerHt
+			},"slow")
+		}
+		});
+	}
+	jQuery('.sign-up-form input[type=checkbox]').addClass("spousecheck");
+	jQuery('.spouse').attr('disabled', 'disabled');
+	jQuery("#scroll-to-top").click(function(event) {
+        event.preventDefault();
+        jQuery("html, body").animate({ scrollTop: 0 }, "slow");
+        return false;
+    });
+	
+jQuery(".spousecheck").change(function() {
+    if(jQuery(this).prop('checked')==true) {
+    	jQuery('.spouse').attr('disabled', false);
+    }
+    else{
+    	jQuery('.spouse').attr('disabled', 'disabled');
+    }
+
+});
 	
 jQuery(window).scroll(function() {
 	 headerFixed();
@@ -37,6 +70,13 @@ jQuery(window).scroll(function() {
 	jQuery(window).resize(function(){
 	 	 headerFixed();
 	 });
+	 var height = jQuery(window).scrollTop();
+	    if (height > 200) {
+	    	console.log("hi");
+	        jQuery('#scroll-to-top').show();
+	    } else {
+	        jQuery('#scroll-to-top').fadeOut();
+	    }
 	});
 	 
 });

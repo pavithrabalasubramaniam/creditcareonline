@@ -19,6 +19,7 @@
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
 	<?php endif; ?>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 		<link href='//fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900,300italic,400italic|Raleway:100,200,300,400,500,600,700,800,900,300italic,400italic|Lora:100,200,300,400,500,600,700,800,900,300italic,400italic|Lato:100,200,300,400,500,600,700,800,900,300italic,400italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 	<?php wp_head(); ?>
 </head>
