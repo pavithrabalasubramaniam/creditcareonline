@@ -631,3 +631,12 @@ function twentysixteen_widget_tag_cloud_args( $args ) {
 	return $args;
 }
 add_filter( 'widget_tag_cloud_args', 'twentysixteen_widget_tag_cloud_args' );
+function the_excerpt_max_charlength($string, $length) {
+    $string = strip_tags($string);  	
+    if(strlen($string) > $length){
+	$string = substr($string,0,$length);
+	$pos=strripos($string, ' ');
+	$string = substr($string, 0,$pos).'...'; 
+    }
+    return $string;
+}

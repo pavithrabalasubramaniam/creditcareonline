@@ -13,6 +13,8 @@ jQuery(document).ready(function(){
     nav:false,  
     items: 1,
     autoplay:true,
+    touchDrag  : false,
+    mouseDrag  : false,
 	autoplayTimeout:5000,
 	autoplayHoverPause:false
 });
@@ -39,16 +41,24 @@ jQuery(document).ready(function(){
         jQuery("html, body").animate({ scrollTop: 0 }, "slow");
         return false;
     });
-	
-jQuery(".spousecheck").change(function() {
+	jQuery('input.spouse').val("NA");
+	jQuery('input.spouse').attr("aria-required",false);
+jQuery(".spousecheck").change(function() {	
     if(jQuery(this).prop('checked')==true) {
     	jQuery('.spouse').attr('disabled', false);
+    	jQuery('input.spouse').val("");    	
     }
     else{
     	jQuery('.spouse').attr('disabled', 'disabled');
+    	jQuery('input.spouse').val("NA");
+    	jQuery('input.spouse').attr("aria-required",false);
     }
 
 });
+jQuery(".wpcf7-submit").click(function(){
+	jQuery('input.spouse').attr("aria-required",false);
+});
+
 	
 jQuery(window).scroll(function() {
 	 headerFixed();

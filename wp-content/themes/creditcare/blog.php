@@ -23,12 +23,14 @@ $blogs = query_posts('posts_per_page=9&post_type=post&paged=' . $paged);
 			     </div>
 			  </div> 
 			  </div>
-			<div class="container pov-container">
+			  <div class="blog-container">
+			<div class="container">
 				<div class="row">
 				<?php
 				foreach ($blogs as $blog):
 				    $post_id = $blog->ID;
 				    $post_title = get_the_title($post_id);
+				    $post_title_short = the_excerpt_max_charlength($post_title, 60);
 				    $date = get_the_date('j F', $blog->ID);
 				    $url = get_the_permalink($post_id);
 				    $author = get_the_author_id($post_id);
@@ -39,21 +41,26 @@ $blogs = query_posts('posts_per_page=9&post_type=post&paged=' . $paged);
 					$content = $content_post->post_content;
 					$gmt_timestamp = get_the_date('g:i', $blog->ID);
 					$user_email = get_the_author_meta('user_nicename',$authid);
+					$short_description = the_excerpt_max_charlength($content, 100);
 					?>
+						<div class="col-md-6 col-sm-6">
 						 <div class="blog-card">						 
-							  <h1><span><?php echo $date?></span><a href="<?php echo $url ?>"><?php echo $post_title ?></a></h1>
+							  <h1><a class="blog_title" href="<?php echo $url ?>"><?php echo $post_title ?></a></h1>
 							  <div class="blog-info">
-							  <p>Posted at <span><?php echo $gmt_timestamp?><!-- </span> in <span><?php echo $cat; ?> --></span> by <span><?php echo $user_email?></span></p>
+							  <span class="blog_date"><?php echo $date?></span>
+							  <p>Posted at <span class="blog_time"><?php echo $gmt_timestamp?><!-- </span> in <span><?php echo $cat; ?> --></span> by <span class="blog_email"><?php echo $user_email?></span></p>
 							  </div>
-							  <div class="description">
-							  	<p><?php echo $content ?></p>
+							  <div class="blog_description">
+							  	<p><?php echo $short_description ?></p>
 							  </div>
-							  <div class="read_more">
+							  <div class="blog_read_more">
 							  <a class="read_more_button" href="<?php echo $url ?>">Read More</a>
 							</div>
+						</div>
 				</div>
 			<?php endforeach; ?>
 			</div> 
+			</div>
 			</div>     
 			<!-- <div class="pagination_outer">
 				<div class="container">         
