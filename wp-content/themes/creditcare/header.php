@@ -22,6 +22,19 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 		<link href='//fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900,300italic,400italic|Raleway:100,200,300,400,500,600,700,800,900,300italic,400italic|Lora:100,200,300,400,500,600,700,800,900,300italic,400italic|Lato:100,200,300,400,500,600,700,800,900,300italic,400italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 	<?php wp_head(); ?>
+		<!-- Google Analytics start -->
+			<script>
+			var _gaq = _gaq || [];
+			_gaq.push(['_setAccount', 'UA-50398491-1']);
+			_gaq.push(['_trackPageview']);
+
+			(function() {
+				var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+				var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+			})();
+		</script>
+		<!-- Google Analytics end -->
 </head>
 
 <body <?php body_class(); ?>>

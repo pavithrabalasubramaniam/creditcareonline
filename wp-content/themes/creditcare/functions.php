@@ -631,6 +631,49 @@ function twentysixteen_widget_tag_cloud_args( $args ) {
 	return $args;
 }
 add_filter( 'widget_tag_cloud_args', 'twentysixteen_widget_tag_cloud_args' );
+ function comment_validation_init() {
+    if(is_single() && comments_open() ) { ?>        
+    <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js"></script>
+    <script type="text/javascript">
+    jQuery(document).ready(function($) {
+    $('#commentform').validate({
+
+    rules: {
+      author: {
+        required: true,
+        minlength: 2
+      },
+
+      email: {
+        required: true,
+        email: true
+      },
+
+      comment: {
+        required: true
+       
+      }
+    },
+
+    messages: {
+      author: "Please fill the required field",
+      email: "Please enter a valid email address.",
+      comment: "Please fill the required field"
+    },
+
+    errorElement: "div",
+    errorPlacement: function(error, element) {
+      element.after(error);
+    }
+
+    });
+    });
+    </script>
+    <?php
+    }
+    }
+    add_action('wp_footer', 'comment_validation_init');
+
 function the_excerpt_max_charlength($string, $length) {
     $string = strip_tags($string);  	
     if(strlen($string) > $length){
